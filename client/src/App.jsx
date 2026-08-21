@@ -7,6 +7,7 @@ import Lessons from "./pages/Lessons";
 import Analytics from "./pages/Analytics";
 import Garden from "./pages/Garden";
 import Login from "./pages/Login";
+import Arcade from "./pages/Arcade";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/garden" element={<Garden />} />
         <Route path="/login" element={<Login />} />
         <Route path="/practice/:lessonId" element={<Practice />} />
+        <Route path="/arcade" element={<Arcade />} />
       </Routes>
     </BrowserRouter>
   );
