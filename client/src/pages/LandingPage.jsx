@@ -5,7 +5,7 @@ import TypingGardenPreview from "../components/landing/TypingGardenPreview";
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0B1120]">
+    <div className="min-h-screen bg-[#F8F3F8]">
 
       <Navbar />
 

@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import PlantIllustration from "./PlantIllustration";
 
 function AnimationScreen() {
-  const stages = [
-    { emoji: "🌰", text: "Planting Seed..." },
-    { emoji: "🌱", text: "Sprouting..." },
-    { emoji: "🌿", text: "Growing..." },
-    { emoji: "🌳", text: "Blooming..." },
-  ];
-
+const stages = [
+  { type: "seed", text: "Planting Seed..." },
+  { type: "sprout", text: "Sprouting..." },
+  { type: "growing", text: "Growing..." },
+  { type: "bloom", text: "Blooming..." },
+];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function AnimationScreen() {
           transition={{ duration: 0.5 }}
           className="text-8xl"
         >
-          {stages[index].emoji}
+          <PlantIllustration type={stages[index].type} />
         </motion.div>
 
       </AnimatePresence>

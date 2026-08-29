@@ -1,38 +1,94 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-10 py-6 bg-[#0B1120] border-b border-gray-800">
+    <nav
+      className="
+        flex
+        items-center
+        justify-between
+        px-10
+        py-5
+        bg-[#F3EDF4]
+        border-b
+        border-[#DDD0DF]
+        text-[#493653]
+      "
+    >
 
-      <h1 className="text-2xl font-bold text-violet-400">
+      {/* Logo */}
+      <Link
+        to="/"
+        className="
+          text-2xl
+          font-bold
+          tracking-tight
+          text-[#684A73]
+          hover:text-[#8E5BA5]
+          transition
+        "
+      >
         Type&Learn
-      </h1>
+      </Link>
 
+
+      {/* Navigation */}
       <div className="flex items-center gap-8">
 
-        <a
-          href="#"
-          className="text-gray-300 hover:text-violet-400 transition"
+        <Link
+          to="/"
+          className="
+            text-[#75657A]
+            hover:text-[#795087]
+            font-medium
+            transition
+          "
         >
           Home
-        </a>
+        </Link>
 
         <a
-          href="#"
-          className="text-gray-300 hover:text-violet-400 transition"
+          href="#features"
+          className="
+            text-[#75657A]
+            hover:text-[#795087]
+            font-medium
+            transition
+          "
         >
           Features
         </a>
 
-        <button
-          className="text-gray-300 hover:text-violet-400 transition"
+        <Link
+          to="/login"
+          className="
+            text-[#75657A]
+            hover:text-[#795087]
+            font-medium
+            transition
+          "
         >
           Login
-        </button>
+        </Link>
 
-        <button
-          className="bg-violet-600 hover:bg-violet-500 transition px-5 py-2 rounded-xl text-white"
+        <Link
+          to="/login"
+          className="
+            px-5
+            py-2.5
+            rounded-xl
+            bg-[#8E5BA5]
+            hover:bg-[#795087]
+            text-white
+            font-medium
+            shadow-sm
+            hover:shadow-md
+            transition-all
+            duration-300
+          "
         >
           Sign Up
-        </button>
+        </Link>
 
       </div>
 

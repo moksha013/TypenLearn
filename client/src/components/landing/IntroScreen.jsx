@@ -1,35 +1,94 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import PlantIllustration from "./PlantIllustration";
+
 function IntroScreen({ setScreen }) {
   const [showHint, setShowHint] = useState(false);
-  useEffect(() => {
-  const timer = setTimeout(() => {
-    setShowHint(true);
-  }, 2000);
 
-  return () => clearTimeout(timer);
-}, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowHint(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
-  onClick={() => setScreen("animation")}
-  className="flex flex-col items-center justify-center h-full text-center cursor-pointer"
->
+      onClick={() => setScreen("animation")}
+      className="
+        flex
+        flex-col
+        items-center
+        justify-center
+        h-full
+        text-center
+        cursor-pointer
+        relative
+      "
+    >
 
-      <div className="text-8xl mb-6">
-        🌱
+      {/* Plant */}
+      <div
+        className="
+          mb-7
+          p-5
+          rounded-full
+          bg-white/60
+          border
+          border-white/80
+          shadow-sm
+          transition-all
+          duration-300
+          hover:scale-105
+          hover:shadow-md
+        "
+      >
+        <PlantIllustration type="sprout" />
       </div>
 
-      <h2 className="text-3xl font-bold text-white">
+
+      {/* Title */}
+      <h2
+        className="
+          text-2xl
+          font-bold
+          text-[#493653]
+        "
+      >
         Your Future Garden
       </h2>
 
-      <p className="text-gray-400 mt-4">
-        Your garden is waiting to grow...
+
+      {/* Description */}
+      <p
+        className="
+          text-[#8A788D]
+          mt-3
+          text-sm
+          leading-relaxed
+        "
+      >
+        Your garden is waiting
+        <br />
+        to grow...
       </p>
-{showHint && (
-  <p className="mt-8 text-violet-400 animate-pulse cursor-pointer">
-    Click here to explore →
-  </p>
-)}
+
+
+      {/* Hint */}
+      {showHint && (
+        <p
+          className="
+            mt-8
+            text-[#9A70A8]
+            text-sm
+            font-medium
+            animate-pulse
+          "
+        >
+          Click here to explore&nbsp; →
+        </p>
+      )}
+
     </div>
   );
 }

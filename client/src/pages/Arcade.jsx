@@ -169,4 +169,4 @@ const handleTyping = (e) => {
   );
 }
 
-export default Arcade;
+export default Arcade; 
