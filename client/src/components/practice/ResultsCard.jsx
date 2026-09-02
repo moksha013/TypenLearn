@@ -4,64 +4,152 @@ function ResultsCard({ wpm, accuracy, onRestart }) {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
+    <div
+      className="
+        fixed
+        inset-0
+        z-50
+        bg-[#493653]/30
+        backdrop-blur-sm
+        flex
+        items-center
+        justify-center
+        px-6
+      "
+    >
 
-      <div className="w-full max-w-md rounded-3xl bg-[#111827] border border-gray-800 p-8 shadow-2xl">
+      <div
+        className="
+          w-full
+          max-w-md
+          rounded-3xl
+          bg-[#FBF8FC]
+          border
+          border-[#E2D6E4]
+          p-8
+          shadow-2xl
+        "
+      >
 
-        <h1 className="text-3xl font-bold text-center text-white">
+        <p
+          className="
+            text-center
+            text-xs
+            uppercase
+            tracking-[0.25em]
+            text-[#9A70A8]
+            font-medium
+          "
+        >
+          Practice Complete
+        </p>
+
+        <h1
+          className="
+            text-3xl
+            font-bold
+            text-center
+            text-[#493653]
+            mt-3
+          "
+        >
           Session Completed
         </h1>
 
-        <div className="mt-8 space-y-5">
+        <div className="mt-8 space-y-4">
 
-          <div className="flex justify-between text-lg">
-            <span className="text-gray-400">
+          {/* WPM */}
+
+          <div
+            className="
+              flex
+              justify-between
+              items-center
+              rounded-2xl
+              bg-[#F3EDF4]
+              border
+              border-[#E3D7E5]
+              px-5
+              py-4
+            "
+          >
+            <span className="text-[#8A788D]">
               WPM
             </span>
 
-            <span className="font-bold text-violet-400">
+            <span className="font-bold text-xl text-[#8E5BA5]">
               {wpm}
             </span>
           </div>
 
-          <div className="flex justify-between text-lg">
-            <span className="text-gray-400">
+          {/* Accuracy */}
+
+          <div
+            className="
+              flex
+              justify-between
+              items-center
+              rounded-2xl
+              bg-[#F1F6F2]
+              border
+              border-[#D8E5DA]
+              px-5
+              py-4
+            "
+          >
+            <span className="text-[#7E9182]">
               Accuracy
             </span>
 
-            <span className="font-bold text-cyan-400">
+            <span className="font-bold text-xl text-[#6F9478]">
               {accuracy}%
             </span>
           </div>
 
         </div>
 
-        <div className="flex gap-4 mt-10">
+        {/* Buttons */}
+
+        <div className="flex flex-col sm:flex-row gap-4 mt-8">
+
+          {/* Practice Again */}
 
           <button
             onClick={onRestart}
             className="
               flex-1
-              rounded-xl
-              bg-violet-600
-              py-3
-              hover:bg-violet-500
-              transition
+              rounded-2xl
+              bg-[#8E5BA5]
+              py-3.5
+              text-white
+              font-semibold
+              hover:bg-[#795087]
+              shadow-sm
+              hover:shadow-md
+              transition-all
+              duration-300
             "
           >
             Practice Again
           </button>
 
+          {/* Dashboard */}
+
           <button
             onClick={() => navigate("/dashboard")}
             className="
               flex-1
-              rounded-xl
+              rounded-2xl
+              bg-white
               border
-              border-gray-700
-              py-3
-              hover:border-violet-500
-              transition
+              border-[#DCCFE0]
+              py-3.5
+              text-[#684A73]
+              font-semibold
+              hover:border-[#B58AC0]
+              hover:bg-[#F8F3F8]
+              transition-all
+              duration-300
             "
           >
             Dashboard
