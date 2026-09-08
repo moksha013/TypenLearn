@@ -1,6 +1,14 @@
+import { Link } from "react-router-dom";
 import features from "../../data/features";
 
 function Features() {
+  const routes = {
+    "Live WPM": "/practice",
+    "Performance Insights": "/analytics",
+    "Arcade Mode": "/arcade",
+    "Typing Garden": "/garden",
+  };
+
   return (
     <aside
       className="
@@ -15,7 +23,6 @@ function Features() {
         overflow-hidden
       "
     >
-
       {/* Soft decorative glow */}
       <div
         className="
@@ -32,7 +39,6 @@ function Features() {
 
       {/* Header */}
       <div className="mb-8 relative z-10">
-
         <p
           className="
             text-sm
@@ -55,17 +61,14 @@ function Features() {
         >
           TypenLearn
         </h2>
-
       </div>
-
 
       {/* Feature Cards */}
       <div className="space-y-4 relative z-10">
-
         {features.map((feature) => (
-
-          <button
+          <Link
             key={feature.id}
+            to={routes[feature.title]}
             className="
               group
               w-full
@@ -88,34 +91,9 @@ function Features() {
               duration-300
             "
           >
-
-            {/* Icon */}
-            <div
-              className="
-                flex
-                items-center
-                justify-center
-                w-11
-                h-11
-                shrink-0
-                rounded-xl
-                bg-[#E9DCEE]
-                text-[#8E5BA5]
-                group-hover:bg-[#DCC3E2]
-                group-hover:scale-105
-                transition
-                duration-300
-              "
-            >
-              <span className="text-xl">
-                {feature.icon}
-              </span>
-            </div>
-
-
+            
             {/* Text */}
             <div>
-
               <h3
                 className="
                   font-semibold
@@ -136,15 +114,10 @@ function Features() {
               >
                 {feature.description}
               </p>
-
             </div>
-
-          </button>
-
+          </Link>
         ))}
-
       </div>
-
     </aside>
   );
 }

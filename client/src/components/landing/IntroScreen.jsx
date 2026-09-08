@@ -85,7 +85,7 @@ function IntroScreen({ setScreen }) {
             animate-pulse
           "
         >
-          Click here to explore&nbsp; →
+          Click here to explore&nbsp; 
         </p>
       )}
 

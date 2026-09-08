@@ -47,17 +47,7 @@ function Navbar() {
           Home
         </Link>
 
-        <a
-          href="#features"
-          className="
-            text-[#75657A]
-            hover:text-[#795087]
-            font-medium
-            transition
-          "
-        >
-          Features
-        </a>
+      
 
         <Link
           to="/login"

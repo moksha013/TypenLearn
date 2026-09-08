@@ -9,9 +9,11 @@ import Garden from "./pages/Garden";
 import Login from "./pages/Login";
 import Arcade from "./pages/Arcade";
 
+
 function App() {
   return (
-    <BrowserRouter>
+    
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -23,7 +25,8 @@ function App() {
         <Route path="/practice/:lessonId" element={<Practice />} />
         <Route path="/arcade" element={<Arcade />} />
       </Routes>
-    </BrowserRouter>
+          </BrowserRouter>
+    
   );
 }
 
