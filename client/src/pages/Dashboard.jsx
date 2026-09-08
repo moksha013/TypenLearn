@@ -33,130 +33,170 @@ function Dashboard() {
     results.length > 0 ? results[results.length - 1] : null;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#0B1120] text-white">
+    <div className="relative min-h-screen overflow-hidden bg-[#F8F3F8] text-[#493653]">
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-violet-600/10 blur-[180px] rounded-full"></div>
+      {/* Background Glows */}
+      <div className="absolute -top-40 -left-40 w-[450px] h-[450px] bg-[#D8B4E2]/25 blur-[180px] rounded-full" />
 
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-cyan-500/10 blur-[180px] rounded-full"></div>
+      <div className="absolute -bottom-40 -right-40 w-[450px] h-[450px] bg-[#C9DCCB]/30 blur-[180px] rounded-full" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-8 py-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 py-10 md:py-12">
 
         {/* Header */}
-        <h1 className="text-6xl font-black tracking-tight">
-          Dashboard
-        </h1>
+        <div>
+          <p className="text-sm uppercase tracking-[0.2em] text-[#9A70A8] font-medium">
+            Your Progress
+          </p>
 
-        <div className="mt-3 h-1 w-28 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-[#493653] mt-2">
+            Dashboard
+          </h1>
 
-        <p className="mt-6 text-lg text-gray-400 max-w-2xl leading-8">
-          Track your typing journey, improve your speed and accuracy,
-          and beat your personal records every day.
-        </p>
+          <div className="mt-4 h-1 w-28 rounded-full bg-gradient-to-r from-[#9A70A8] to-[#C4A9C8]" />
 
-        {/* Cards */}
-        <div className="grid grid-cols-2 gap-7 mt-12">
+          <p className="mt-6 text-lg text-[#8A788D] max-w-2xl leading-8">
+            Track your typing journey, improve your speed and accuracy,
+            and beat your personal records every day.
+          </p>
+        </div>
+
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 mt-12">
 
           {/* Best WPM */}
-          <div className="bg-[#111827]/70 backdrop-blur-xl border border-gray-800 rounded-3xl p-7 transition-all duration-300 hover:border-violet-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.18)] hover:-translate-y-1">
+          <div className="group bg-white/75 backdrop-blur-xl border border-[#E2D6E4] rounded-3xl p-7 shadow-sm hover:-translate-y-1 hover:border-[#B58AC0] hover:shadow-md transition-all duration-300">
 
             <div className="flex items-center gap-3">
-              <Zap className="text-violet-400" size={24} />
+              <div className="w-11 h-11 rounded-xl bg-[#E9DCEE] flex items-center justify-center group-hover:bg-[#E1CEE5] transition">
+                <Zap className="text-[#8E5BA5]" size={22} />
+              </div>
 
-              <p className="uppercase tracking-[0.2em] text-xs text-gray-500 font-semibold">
+              <p className="uppercase tracking-[0.2em] text-xs text-[#8A788D] font-semibold">
                 Best WPM
               </p>
             </div>
 
-            <h2 className="mt-6 text-6xl font-black">
+            <h2 className="mt-6 text-5xl md:text-6xl font-black text-[#493653]">
               {bestWpm}
             </h2>
+
+            <p className="mt-2 text-sm text-[#A99BAE]">
+              Your highest recorded speed
+            </p>
 
           </div>
 
           {/* Accuracy */}
-          <div className="bg-[#111827]/70 backdrop-blur-xl border border-gray-800 rounded-3xl p-7 transition-all duration-300 hover:border-cyan-500 hover:shadow-[0_0_40px_rgba(34,211,238,0.18)] hover:-translate-y-1">
+          <div className="group bg-white/75 backdrop-blur-xl border border-[#D8E5DA] rounded-3xl p-7 shadow-sm hover:-translate-y-1 hover:border-[#AFC7B3] hover:shadow-md transition-all duration-300">
 
             <div className="flex items-center gap-3">
-              <Target className="text-cyan-400" size={24} />
+              <div className="w-11 h-11 rounded-xl bg-[#E6F0E8] flex items-center justify-center group-hover:bg-[#DDEADF] transition">
+                <Target className="text-[#6F9478]" size={22} />
+              </div>
 
-              <p className="uppercase tracking-[0.2em] text-xs text-gray-500 font-semibold">
+              <p className="uppercase tracking-[0.2em] text-xs text-[#7E9182] font-semibold">
                 Best Accuracy
               </p>
             </div>
 
-            <h2 className="mt-6 text-6xl font-black">
+            <h2 className="mt-6 text-5xl md:text-6xl font-black text-[#493653]">
               {bestAccuracy}%
             </h2>
+
+            <p className="mt-2 text-sm text-[#9AAA9E]">
+              Your highest accuracy
+            </p>
 
           </div>
 
           {/* Average */}
-          <div className="bg-[#111827]/70 backdrop-blur-xl border border-gray-800 rounded-3xl p-7 transition-all duration-300 hover:border-green-500 hover:shadow-[0_0_40px_rgba(34,197,94,0.18)] hover:-translate-y-1">
+          <div className="group bg-white/75 backdrop-blur-xl border border-[#E2D6E4] rounded-3xl p-7 shadow-sm hover:-translate-y-1 hover:border-[#B58AC0] hover:shadow-md transition-all duration-300">
 
             <div className="flex items-center gap-3">
-              <BarChart3 className="text-green-400" size={24} />
+              <div className="w-11 h-11 rounded-xl bg-[#E9DCEE] flex items-center justify-center group-hover:bg-[#E1CEE5] transition">
+                <BarChart3 className="text-[#8E5BA5]" size={22} />
+              </div>
 
-              <p className="uppercase tracking-[0.2em] text-xs text-gray-500 font-semibold">
+              <p className="uppercase tracking-[0.2em] text-xs text-[#8A788D] font-semibold">
                 Average WPM
               </p>
             </div>
 
-            <h2 className="mt-6 text-6xl font-black">
+            <h2 className="mt-6 text-5xl md:text-6xl font-black text-[#493653]">
               {averageWpm}
             </h2>
+
+            <p className="mt-2 text-sm text-[#A99BAE]">
+              Your average typing speed
+            </p>
 
           </div>
 
           {/* Tests */}
-          <div className="bg-[#111827]/70 backdrop-blur-xl border border-gray-800 rounded-3xl p-7 transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_40px_rgba(250,204,21,0.18)] hover:-translate-y-1">
+          <div className="group bg-white/75 backdrop-blur-xl border border-[#E2D6E4] rounded-3xl p-7 shadow-sm hover:-translate-y-1 hover:border-[#D3B47A] hover:shadow-md transition-all duration-300">
 
             <div className="flex items-center gap-3">
-              <Trophy className="text-yellow-400" size={24} />
+              <div className="w-11 h-11 rounded-xl bg-[#F4EEDC] flex items-center justify-center group-hover:bg-[#EFE6CC] transition">
+                <Trophy className="text-[#B18A45]" size={22} />
+              </div>
 
-              <p className="uppercase tracking-[0.2em] text-xs text-gray-500 font-semibold">
+              <p className="uppercase tracking-[0.2em] text-xs text-[#8A788D] font-semibold">
                 Tests Completed
               </p>
             </div>
 
-            <h2 className="mt-6 text-6xl font-black">
+            <h2 className="mt-6 text-5xl md:text-6xl font-black text-[#493653]">
               {results.length}
             </h2>
+
+            <p className="mt-2 text-sm text-[#A99BAE]">
+              Total practice sessions
+            </p>
 
           </div>
 
         </div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-2 gap-7 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 mt-10">
 
           {/* Recent Test */}
-          <div className="bg-[#111827]/70 backdrop-blur-xl border border-gray-800 rounded-3xl p-7">
+          <div className="bg-white/75 backdrop-blur-xl border border-[#E2D6E4] rounded-3xl p-7 shadow-sm">
 
-            <h3 className="text-2xl font-bold">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#9A70A8] font-medium">
+              Latest Activity
+            </p>
+
+            <h3 className="text-2xl font-bold text-[#493653] mt-2">
               Recent Test
             </h3>
 
             {latestResult ? (
-              <div className="mt-5 space-y-3 text-lg">
+              <div className="mt-6 space-y-4">
 
-                <p>
-                  WPM :
-                  <span className="text-violet-400 font-bold ml-2">
+                <div className="flex justify-between items-center rounded-2xl bg-[#F3EDF4] border border-[#E3D7E5] px-5 py-4">
+                  <span className="text-[#8A788D]">
+                    WPM
+                  </span>
+
+                  <span className="text-xl text-[#8E5BA5] font-bold">
                     {latestResult.wpm}
                   </span>
-                </p>
+                </div>
 
-                <p>
-                  Accuracy :
-                  <span className="text-cyan-400 font-bold ml-2">
+                <div className="flex justify-between items-center rounded-2xl bg-[#F1F6F2] border border-[#D8E5DA] px-5 py-4">
+                  <span className="text-[#7E9182]">
+                    Accuracy
+                  </span>
+
+                  <span className="text-xl text-[#6F9478] font-bold">
                     {latestResult.accuracy}%
                   </span>
-                </p>
+                </div>
 
               </div>
             ) : (
-              <p className="mt-5 text-gray-400">
+              <p className="mt-6 text-[#8A788D]">
                 No tests completed yet.
               </p>
             )}
@@ -164,15 +204,19 @@ function Dashboard() {
           </div>
 
           {/* Continue Practice */}
-          <div className="bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl p-7 flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-[#8E5BA5] via-[#9D70AD] to-[#789B82] rounded-3xl p-7 flex flex-col justify-between shadow-md">
 
             <div>
 
-              <h3 className="text-3xl font-bold">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/70 font-medium">
+                Keep Growing
+              </p>
+
+              <h3 className="text-3xl font-bold text-white mt-2">
                 Continue Practice
               </h3>
 
-              <p className="mt-4 text-violet-100">
+              <p className="mt-4 text-white/80 leading-7">
                 Ready to beat your personal best?
               </p>
 
@@ -180,7 +224,7 @@ function Dashboard() {
 
             <Link
               to="/practice"
-              className="mt-8 bg-white text-black rounded-xl py-4 flex items-center justify-center gap-3 font-bold hover:scale-105 transition"
+              className="mt-8 bg-white text-[#684A73] rounded-2xl py-4 flex items-center justify-center gap-3 font-bold hover:bg-[#FBF8FC] hover:scale-[1.02] transition-all duration-300 shadow-sm"
             >
               <Play size={20} />
               Start Typing
