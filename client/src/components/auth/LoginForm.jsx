@@ -1,4 +1,22 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function LoginForm() {
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const trimmedName = name.trim();
+
+    if (!trimmedName) return;
+
+    localStorage.setItem("userName", trimmedName);
+
+    navigate("/");
+  };
+
   return (
     <div
       className="
@@ -13,7 +31,6 @@ function LoginForm() {
         shadow-[0_25px_70px_rgba(91,63,102,0.20)]
       "
     >
-
       {/* Brand */}
       <p
         className="
@@ -60,7 +77,7 @@ function LoginForm() {
         <span className="h-px w-12 bg-[#d8bfdc]" />
       </div>
 
-      <form className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
 
         {/* Name */}
         <div>
@@ -79,6 +96,8 @@ function LoginForm() {
           <input
             type="text"
             placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             autoComplete="off"
             className="
               w-full
@@ -124,7 +143,6 @@ function LoginForm() {
         >
           <span className="flex items-center justify-center gap-3">
             Continue
-            <span className="text-lg"></span>
           </span>
         </button>
 
@@ -134,7 +152,6 @@ function LoginForm() {
       <p className="mt-8 text-center text-xs text-[#a493aa]">
         Keep growing, one keystroke at a time.
       </p>
-
     </div>
   );
 }
