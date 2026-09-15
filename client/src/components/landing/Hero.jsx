@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import NameModal from "./NameModal";
 
 function Hero() {
+  const [showNameModal, setShowNameModal] = useState(false);
+  const [userName, setUserName] = useState(
+    localStorage.getItem("userName") || ""
+  );
+
   return (
     <section
       className="
@@ -27,6 +34,12 @@ function Hero() {
 
 
       <div className="relative z-10 max-w-5xl text-center">
+
+      {userName && (
+  <p className="mb-4 text-[#8E5BA5] text-sm font-medium">
+    Welcome, {userName} 
+  </p>
+)}
 
         {/* Badge */}
         <div
@@ -101,28 +114,27 @@ function Hero() {
         {/* Buttons */}
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-5">
 
-          <Link
-            to="/login"
-            className="
-              px-9
-              py-4
-              rounded-xl
-              font-semibold
-              text-white
-              bg-gradient-to-r
-              from-[#8E5BA5]
-              to-[#B55CB8]
-              shadow-lg
-              shadow-[#9B6BAA]/20
-              hover:scale-[1.02]
-              hover:shadow-xl
-              transition
-              duration-300
-              inline-block
-            "
-          >
-            Start Learning&nbsp;
-          </Link>
+          <button
+  onClick={() => setShowNameModal(true)}
+  className="
+    px-9
+    py-4
+    rounded-xl
+    font-semibold
+    text-white
+    bg-gradient-to-r
+    from-[#8E5BA5]
+    to-[#B55CB8]
+    shadow-lg
+    shadow-[#9B6BAA]/20
+    hover:scale-[1.02]
+    hover:shadow-xl
+    transition
+    duration-300
+  "
+>
+  Start Learning
+</button>
 
 
           <Link
@@ -192,6 +204,16 @@ function Hero() {
         </div>
 
       </div>
+
+      {showNameModal && (
+  <NameModal
+    onClose={() => setShowNameModal(false)}
+    onSave={(name) => {
+      setUserName(name);
+      setShowNameModal(false);
+    }}
+  />
+)}
 
     </section>
   );

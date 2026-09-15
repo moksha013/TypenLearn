@@ -6,29 +6,29 @@ import Practice from "./pages/Practice";
 import Lessons from "./pages/Lessons";
 import Analytics from "./pages/Analytics";
 import Garden from "./pages/Garden";
-import Login from "./pages/Login";
 import Arcade from "./pages/Arcade";
-import Signup from "./pages/Signup";
-
 
 function App() {
   return (
-    
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+
         <Route path="/dashboard" element={<Dashboard />} />
+
         <Route path="/practice" element={<Practice />} />
+
         <Route path="/lessons" element={<Lessons />} />
+
         <Route path="/analytics" element={<Analytics />} />
+
         <Route path="/garden" element={<Garden />} />
-        <Route path="/login" element={<Login />} />
+
         <Route path="/practice/:lessonId" element={<Practice />} />
+
         <Route path="/arcade" element={<Arcade />} />
-        <Route path="/signup" element={<Signup />} />
       </Routes>
-          </BrowserRouter>
-    
+    </BrowserRouter>
   );
 }
 
